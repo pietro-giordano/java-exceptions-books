@@ -10,15 +10,24 @@ public class Main {
         Book[] library = new Book[n];
 
         for (int i = 0; i < library.length; i++) {
-            System.out.println("Inserisci titolo:");
-            String title = scanner.nextLine();
-            System.out.println("Inserisci numero pagine:");
-            int nPage = Integer.parseInt(scanner.nextLine());
-            System.out.println("Inserisci autore:");
-            String author = scanner.nextLine();
-            System.out.println("Inserisci editore:");
-            String editor = scanner.nextLine();
-            Book newBook = new Book(title, nPage, author, editor);
+            Book newBook = null;
+            boolean flag = false;
+            do {
+                try {
+                    System.out.println("Inserisci titolo:");
+                    String title = scanner.nextLine();
+                    System.out.println("Inserisci numero pagine:");
+                    int nPage = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Inserisci autore:");
+                    String author = scanner.nextLine();
+                    System.out.println("Inserisci editore:");
+                    String editor = scanner.nextLine();
+                    newBook = new Book(title, nPage, author, editor);
+                } catch (BookCreateException e) {
+                    System.out.println("Hai inserito qualche valore in fase di creazione errato. Riprova.");
+                }
+            } while (!flag);
+
             library[i] = newBook;
         }
 
