@@ -1,0 +1,1 @@
+Book{Titolo: 'Ciao', numero pagine: 234, autore: 'io', editore: 'boh'}
