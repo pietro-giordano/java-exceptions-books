@@ -3,7 +3,7 @@ package org.lessons.java.library;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws BookCreateException {
         System.out.println("Salve. Quanti libri vuoi inserire in libreria?");
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
@@ -22,6 +22,9 @@ public class Main {
             library[i] = newBook;
         }
 
+        for (int i = 0; i < library.length; i++) {
+            System.out.println(library[i].toString());
+        }
 
         scanner.close();
     }
