@@ -1,14 +1,14 @@
 package org.lessons.java.library;
 
 public class Book {
-    private String name;
+    private String title;
     private int nPage;
     private String author;
     private String editor;
 
-    public Book(String name, int nPage, String author, String editor) throws BookCreateException {
-        if (!name.isEmpty() && nPage > 0 && !author.isEmpty() && !editor.isEmpty()) {
-            this.name = name;
+    public Book(String title, int nPage, String author, String editor) throws BookCreateException {
+        if (!title.isEmpty() && nPage > 0 && !author.isEmpty() && !editor.isEmpty()) {
+            this.title = title;
             this.nPage = nPage;
             this.author = author;
             this.editor = editor;
@@ -18,12 +18,12 @@ public class Book {
     }
 
     public String getName() {
-        return name;
+        return title;
     }
 
     public void setName(String name) throws BookCreateException {
         if (!name.isEmpty()) {
-            this.name = name;
+            this.title = name;
         } else {
             throw new BookCreateException();
         }
@@ -68,10 +68,10 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "name='" + name + '\'' +
-                ", numberPage=" + nPage +
-                ", author='" + author + '\'' +
-                ", editor='" + editor + '\'' +
+                "Titolo: '" + title + '\'' +
+                ", numero pagine: " + nPage +
+                ", autore: '" + author + '\'' +
+                ", editore: '" + editor + '\'' +
                 '}';
     }
 }
