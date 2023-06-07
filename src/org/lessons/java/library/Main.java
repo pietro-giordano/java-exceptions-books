@@ -23,9 +23,13 @@ public class Main {
                     System.out.println("Inserisci editore:");
                     String editor = scanner.nextLine();
                     newBook = new Book(title, nPage, author, editor);
+                    flag = true;
                 } catch (BookCreateException e) {
-                    System.out.println("Hai inserito qualche valore in fase di creazione errato. Riprova.");
+                    System.out.println("Hai inserito qualche valore in fase di creazione errato, riprova.");
+                } catch (NumberFormatException e) {
+                    System.out.println("Numero pagine non corretto, riprova.");
                 }
+
             } while (!flag);
 
             library[i] = newBook;
